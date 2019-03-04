@@ -1,0 +1,14 @@
+{
+  "main.css": "/bosc/static/css/main.31b40a87.chunk.css",
+  "main.js": "/bosc/static/js/main.4764d0b6.chunk.js",
+  "main.js.map": "/bosc/static/js/main.4764d0b6.chunk.js.map",
+  "runtime~main.js": "/bosc/static/js/runtime~main.d90f8bbd.js",
+  "runtime~main.js.map": "/bosc/static/js/runtime~main.d90f8bbd.js.map",
+  "static/js/2.5bf9b2cd.chunk.js": "/bosc/static/js/2.5bf9b2cd.chunk.js",
+  "static/js/2.5bf9b2cd.chunk.js.map": "/bosc/static/js/2.5bf9b2cd.chunk.js.map",
+  "index.html": "/bosc/index.html",
+  "precache-manifest.e1f36e373db47dacf7070d0f1d1db59e.js": "/bosc/precache-manifest.e1f36e373db47dacf7070d0f1d1db59e.js",
+  "service-worker.js": "/bosc/service-worker.js",
+  "static/css/main.31b40a87.chunk.css.map": "/bosc/static/css/main.31b40a87.chunk.css.map",
+  "static/media/logo.svg": "/bosc/static/media/logo.5d5d9eef.svg"
+}
