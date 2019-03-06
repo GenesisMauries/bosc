@@ -1,6 +1,8 @@
 //Dependencias
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+//Componentes
+import Search from '../Search/Search'
 //Varios
 import './Data.css';
 
@@ -9,9 +11,30 @@ class Data extends Component {
         super()
         this.state = {
             data: [],
-            loaded: false
+            loaded: false,
+            filter:{
+                name:'',
+                status:''
+            }
         }
     }
+
+    handleOnSearch(e){
+        let newFilter = Object.assign({}, this.state.filter,  {[e.target.name]:[e.target.value]})
+        this.setState({
+            filter: newFilter
+        })
+        console.log(newFilter)
+    }
+
+    handleOnFilter(filter, data){
+        let regex = new RegExp(filter.search, 'i')
+        return data.filter(q => (regex.test(q.name)|| regex.test(q.status)))
+    }
+
+    handleOnFilter = this.handleOnFilter.bind(this)
+    handleOnSearch = this.handleOnSearch.bind(this)
+
     componentDidMount(){
         fetch('https://rickandmortyapi.com/api/character/')
         .catch((error)=>{
@@ -28,6 +51,7 @@ class Data extends Component {
         })
         
     }
+
   render() {
       const {data, loaded} = this.state
 
@@ -39,7 +63,9 @@ class Data extends Component {
             </div>
         }else{
           return (
-                <div className="container">
+            <React.Fragment>
+            <Search onSearch={this.handleOnSearch}/>
+            <div className="container">
             {data.results.map(item=>(
                 <div key= {item.id} className="card" style={{width: "16rem"}}>
                     <img src={item.image} className="card-img-top" alt="foto"/>
@@ -51,6 +77,7 @@ class Data extends Component {
                 </div>
             ))}
             </div>
+            </React.Fragment>
             );
         }
     }

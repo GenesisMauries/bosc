@@ -1,5 +1,5 @@
 .container{
-    margin-top: 20px;
+    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -12,4 +12,8 @@
 .container .card h5{
     font-size: 18px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.bar{
+    background-color: #555555;
+    padding: 30px;
 }
