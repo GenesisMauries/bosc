@@ -1,7 +1,6 @@
 //Dependencias
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 //Estilos
 import './Search.css';
 

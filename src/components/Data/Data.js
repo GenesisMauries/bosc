@@ -13,8 +13,8 @@ class Data extends Component {
             data: [],
             loaded: false,
             filter:{
-                name:'',
-                status:''
+                name:''
+                
             }
         }
     }
@@ -29,7 +29,7 @@ class Data extends Component {
 
     handleOnFilter(filter, data){
         let regex = new RegExp(filter.search, 'i')
-        return data.filter(q => (regex.test(q.name)|| regex.test(q.status)))
+        return data.filter(q => (regex.test(q.name)))
     }
 
     handleOnFilter = this.handleOnFilter.bind(this)
@@ -56,7 +56,7 @@ class Data extends Component {
       const {data, loaded} = this.state
 
       if(!loaded){
-          return <div className="text-center">
+          return <div className="text-center" >
             <div className="spinner-border" style={{width: "3rem", height: "3rem"}} role="status">
                 <span className="sr-only">Cargando...</span>
             </div>
@@ -65,7 +65,7 @@ class Data extends Component {
           return (
             <React.Fragment>
             <Search onSearch={this.handleOnSearch}/>
-            <div className="container">
+            <div className="container" >
             {data.results.map(item=>(
                 <div key= {item.id} className="card" style={{width: "16rem"}}>
                     <img src={item.image} className="card-img-top" alt="foto"/>
